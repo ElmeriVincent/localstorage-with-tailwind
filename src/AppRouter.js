@@ -1,17 +1,15 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import Home from './pages/home'
-import Docs from './pages/docs'
-import About from './pages/about'
+import Page1 from './pages/Page1'
+import Page2 from './pages/Page2'
 
 const AppRouter = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/docs" element={<Docs />} />
-                <Route path="/about" element={<About />} />
+                <Route path="/" element={<Page1 />} />
+                <Route path="/page2" element={<Page2 />} />
             </Routes>
         </Router>
     )

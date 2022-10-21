@@ -1,10 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
+import Navbar from './components/Navbar'
 import AppRouter from './AppRouter'
 
 export default function App() {
 
-  const getMode = () => { return JSON.parse(localStorage.getItem("mode")) || false }
+  const getMode = () => {
+    return JSON.parse(localStorage.getItem("mode")) || false
+  }
 
   const [mode, setMode] = useState(getMode);
 
@@ -14,10 +17,9 @@ export default function App() {
     localStorage.setItem("mode", JSON.stringify(mode))
   }, [mode])
 
-  //<Navbar darkMode={mode} changeTheme={changeMode} />
-
   return (
     <div className={mode ? 'dark' : ''}>
+      <Navbar darkMode={mode} changeTheme={changeMode} />
       <AppRouter />
     </div>
   )
